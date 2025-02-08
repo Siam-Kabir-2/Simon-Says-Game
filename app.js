@@ -9,17 +9,17 @@ let highScore=0;
 
 let h2=document.querySelector("h2");
 
-// document.addEventListener("keypress",function(){
-//     if(started == false){
-//         console.log("game started");
-//         started=true;
-//         setTimeout(levelUp,400);
-//     }
-// });
+document.addEventListener("keypress",function(){
+    if(started == false){
+        console.log("game started");
+        started=true;
+        setTimeout(levelUp,400);
+    }
+});
 
 let strBtn=document.querySelector(".strt");
 
-strBtn.addEventListener("touchstart",function(){
+strBtn.addEventListener("click",function(){
     if(started == false){
         console.log("game started");
         started=true;
@@ -64,7 +64,7 @@ function checkAns(idx){
         }
     }else{
         highScore=Math.max(highScore,level);
-        h2.innerHTML=`Game Over! <br> Your score : <b>${level}</b> <br> Highest Score : ${highScore} <br>  Press Start to start again!`;
+        h2.innerHTML=`Game Over! <br> Your score : <b>${level}</b> <br> Highest Score : ${highScore} <br>  Press Start or any key to start again!`;
         document.querySelector("body").style.backgroundColor="red";
         setTimeout(function(){
             document.querySelector("body").style.backgroundColor="rgba(179, 249, 255, 0.517)";
